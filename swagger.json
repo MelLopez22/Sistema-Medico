@@ -1,0 +1,18 @@
+{
+    "swaggerDefinition":{
+        "info":{
+            "version": "1.0.0",
+            "title": "TicketExpress Api",
+            "descripcion": "Documentacion api para su uso",
+            "contact":{
+                "name":"",
+                "url":""
+            },
+            "servers":["/"]
+        }
+    },
+    "basePath":{
+        "default": "v2"
+    },
+    "apis":[]
+}
