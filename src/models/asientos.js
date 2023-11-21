@@ -9,27 +9,27 @@ module.exports = function (sequelize, DataTypes) {
       autoIncrement: true,
       unique: true,
     },
-    asiento: {
-      type: DataTypes.STRING,
-      allowNull: false,
-    },
-    reservado: {
-      type: DataTypes.BOOLEAN,
-      allowNull: false,
-      defaultValue: true,
-    },
-    tiempo_expiracion: {
-      type: DataTypes.DATE,
-      defaultValue: Sequelize.NOW
-    },
-    id_buses: {
-      type: DataTypes.INTEGER,
-      allowNull: false,
-      references: {
-        model: 'buses_rutas',
-        key: 'id',
-      },
-    },
+    // asiento: {
+    //   type: DataTypes.STRING,
+    //   allowNull: false,
+    // },
+    // reservado: {
+    //   type: DataTypes.BOOLEAN,
+    //   allowNull: false,
+    //   defaultValue: true,
+    // },
+    // tiempo_expiracion: {
+    //   type: DataTypes.DATE,
+    //   defaultValue: Sequelize.NOW
+    // },
+    // id_buses: {
+    //   type: DataTypes.INTEGER,
+    //   allowNull: false,
+    //   references: {
+    //     model: 'buses_rutas',
+    //     key: 'id',
+    //   },
+    // },
 
   }, {
     sequelize,

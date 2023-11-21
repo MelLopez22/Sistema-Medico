@@ -4,7 +4,7 @@
       "require": true
     }
   },
-  "options": {
+  "options": {    
     "type": "js",
     "dir": "models"
   },

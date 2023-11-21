@@ -6,32 +6,16 @@ const process = require("process");
 const initModels = require("./models/init-models");
 const env = process.env.NODE_ENV || "development";
 const config = require(__dirname + "/config/config.json")[env];
-const { DB_URL } = process.env;
+const { DB_USER, DB_PASSWORD, DB_HOST } = process.env;
 
-const db = [];
+const sequelize = new Sequelize(
+  `postgres://${DB_USER}:${DB_PASSWORD}@${DB_HOST}/medico`,
+  {
+    logging: false, 
+    native: false, 
+  }   
+);
 
-let sequelize;
-if (config.use_env_variable) {
-  sequelize = new Sequelize(
-    DB_URL,
-    {
-      logging: false,
-      native: false,
-      dialectOptions: {
-        ssl: {
-          require: 'true'
-        }
-      }
-    }
-  );
-} else {
-  sequelize = new Sequelize(
-    config.database,
-    config.username,
-    config.password,
-    config
-  );
-}
 
 sequelize.models = initModels.initModels(sequelize);
 module.exports = {
